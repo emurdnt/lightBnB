@@ -73,16 +73,11 @@ exports.getUserWithId = getUserWithId;
  * @return {Promise<{}>} A promise to the user.
  */
 const addUser =  function(user) {
-  
-  console.log(user);
-  // req.session.userId = user.id;
-  // res.send({user: {name: user.name, email: user.email, id: user.id}});
-  // const newUserId = generateUserId(users);
 
-  //     const inputPassword = password;
   const name = user['name'];
   const email = user['email'];
   const hashedPassword = bcrypt.hashSync(user['password'], 10);
+  
   const queryString = `
   INSERT INTO users (name, email, password)
   VALUES($1,$2,$3)
