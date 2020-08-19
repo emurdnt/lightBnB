@@ -6,6 +6,8 @@
 -- ORDER BY start_date
 -- LIMIT 10;
 
+-- select * from users limit 3;
+
 SELECT properties.*, reservations.*, avg(rating) as average_rating
 FROM reservations
 JOIN properties ON reservations.property_id = properties.id
